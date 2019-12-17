@@ -7,7 +7,7 @@ wordsList = []
 def word_search(partial):
     search_results = []
     for item in wordsList:
-        if partial in item:f
+        if partial in item:
             search_results.append(item) 
     return search_results		
 
@@ -42,7 +42,7 @@ with open((sys.argv)[1]) as datafile:
     for each_row in datafile:
         word, frequency = each_row.split(',') #dividing it into word and frequency of occurence
         word_count[word] = int(frequency.strip()) # inserting into the wordcount dictionary key as word and value as frequency
-       wordsList.append(word) #inserting only the word in words
+        wordsList.append(word) #inserting only the word in words
 
 
 
@@ -66,8 +66,8 @@ l= word_search((sys.argv)[2])
 valed={}
 if l ==[]:	#This indicates that the word given as input is not present in any of the words in list of words given
     blank={}
-    for item in list_of_words: #this returns a dictionary of words with their edit distance with the word given as input
-        val=editDistance(sys.argv[2],item,len(sys.argv[2]),len(item))
+    for item in wordsList: #this returns a dictionary of words with their edit distance with the word given as input
+        val=Distance_str(sys.argv[2],item,len(sys.argv[2]),len(item))
         valed[item]=val
     blank=dict(sorted(valed.items(), key = lambda kv:(kv[1]))) 		#this create a dictionary which is sorted along its values i.e the edit distance	
     #print(list(blank.keys()),type(blank.keys()))
