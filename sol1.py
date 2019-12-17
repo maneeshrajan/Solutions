@@ -1,10 +1,9 @@
 import sys
 import operator
 import pandas
-#word_frequency = {}
 frequency_of_word = {}
 word_list = []
-with open("dictionary.csv") as datafile:
+with open((sys.argv)[1]) as datafile:
     for each_row in datafile:
         word, frequency = each_row.split(',') #dividing it into word and frequency of occurence
         frequency_of_word[word] = int(frequency.strip()) # inserting into the wordcount dictionary key as word and value as frequency
